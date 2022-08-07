@@ -1,0 +1,86 @@
+{% extends "main_temp.html" %}
+{% block content %}
+	{#	<div class="content-section">#}
+	{#		<div class="media">#}
+	{#			<div class="media-body">#}
+	{#				<h2 class="account-heading">{{ expense.owner.email }}, <br>#}
+	{#					rent {{ expense.rent }}, <br> groceries {{ expense.groceries }}, <br> bills {{ expense.bills }},#}
+	{#					<br> transportation{{ expense.transportation }},<br> entertainment{{ expense.entertainment }},<br>#}
+	{#					vacation {{ expense.vacation }},<br> miscellaneous {{ expense.miscellaneous }} </h2>#}
+	{#				<p class="text-secondary"></p>#}
+	{#			</div>#}
+	{#		</div>#}
+	{#		<!-- FORM HERE -->#}
+	{#	</div>#}
+
+	<div class="expenseinfo">
+		<p class="titwelcome">
+			Hello, {{ current_user.first_name }}
+		</p>
+		<p class="descriptionpar">
+			Please see below an in-depth review on your monthly expenses so far <br>
+			{{ expense.datetime }}
+		</p>
+	</div>
+
+	<div class="container">
+		<div class="row" id="expensedisplay">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body" id="expenseblock">
+						<h5 class="card-title">Rent</h5>
+						<p class="card-text">{{ expense.rent }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body" id="expenseblock">
+						<h5 class="card-title">Groceries</h5>
+						<p class="card-text">{{ expense.groceries }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body" id="expenseblock">
+						<h5 class="card-title">Bills</h5>
+						<p class="card-text">{{ expense.bills }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body" id="expenseblock">
+						<h5 class="card-title">Transportation</h5>
+						<p class="card-text">{{ expense.transportation }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body" id="expenseblock">
+						<h5 class="card-title">Entertainment</h5>
+						<p class="card-text">{{ expense.entertainment }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body" id="expenseblock">
+						<h5 class="card-title">Vacation</h5>
+						<p class="card-text">{{ expense.vacation }}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body" id="expenseblock">
+						<h5 class="card-title">Miscellaneous </h5>
+						<p class="card-text">{{ expense.miscellaneous }}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

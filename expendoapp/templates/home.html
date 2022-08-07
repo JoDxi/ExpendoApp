@@ -1,0 +1,101 @@
+{% extends "main_temp.html" %}
+{% block content %}
+	<!--  -->
+
+
+	<p class="titwelcome"> Welcome to Expendo! </p>
+	<p class="descriptionpar">
+		Expendo is a finance & expenses management service which aims to educate the general public on proper financial
+		managment.
+		<br>
+
+	</p>
+
+
+	<div class="container col-xxl-8 px-4 py-5">
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-5" id="hero">
+			<div class="col-10 col-sm-8 col-lg-6">
+				<img src="static/homeimglaptop.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+					 width="700" height="500" loading="lazy">
+			</div>
+			<div class="col-lg-6">
+				<h1 class="display-5 fw-bold lh-1 mb-3">The #1 Expenses management app!</h1>
+				<p class="lead">An intuitive, lightweight time tracking experience that’s easy to adopt and use every
+					day.<br>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse feugiat a dui sed iaculis. Sed
+					est quam, porttitor semper augue at, suscipit vehicula lectus. Vestibulum.</p>
+				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+					<button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+					<button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="b-example-divider"></div>
+
+	<div class="container col-xxl-8">
+		<div class="accordion" id="accordionExample">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingOne">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse"
+							data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						Why choose us?
+					</button>
+				</h2>
+				<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+					 data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						    Our team of experts are highly motivated and highly skilled to help you overcome any
+							financial burden!
+							Through our tough screening process we insure only the best financiers are available for you
+							at any given time.<br>
+							Why work with amateurs when you have your very own panel of experts and representatives to
+							help you towards financial independence !
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingTwo">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						Our Guarantee
+					</button>
+				</h2>
+				<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+					 data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						Our business model runs on a core idea which insures mutual intrest in the sucsses of the
+						customer - the more you save, the more we earn.
+						Instead of charging you for our services, we take a small <strong> 5% fee </strong> of what you
+						were able to save using Expendo!
+					</div>
+				</div>
+			</div>
+
+
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingThree">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						Provisions
+					</button>
+				</h2>
+				<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+					 data-bs-parent="#accordionExample">
+					<div class="accordion-body">
+						<strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+						collapse plugin adds the appropriate classes that we use to style each element. These classes
+						control the overall appearance, as well as the showing and hiding via CSS transitions. You can
+						modify any of this with custom CSS or overriding our default variables. It's also worth noting
+						that just about any HTML can go within the <code>.accordion-body</code>, though the transition
+						does limit overflow.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock content %}
