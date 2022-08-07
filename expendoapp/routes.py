@@ -84,7 +84,6 @@ def myExpenses():
 	return render_template('my_expenses.html', expense=expense, title='My Expenses')
 
 
-#
 @app.route('/expense/new', methods=['GET', 'POST'])
 @login_required
 def addExpense():
