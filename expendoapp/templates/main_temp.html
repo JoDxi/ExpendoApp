@@ -39,7 +39,7 @@
 				</li>
 				{% if current_user.is_authenticated %}
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="{{ url_for('myExpenses') }}">My Expenses</a>
+						<a class="nav-link active" aria-current="page" href="{{ url_for('myExpenses', month="kollo") }}">My Expenses</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="{{ url_for('addExpense') }} "> Add Expense </a>

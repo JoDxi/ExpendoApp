@@ -13,6 +13,27 @@
 	{#		<!-- FORM HERE -->#}
 	{#	</div>#}
 
+	<div class="dropdown">
+		<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+			Month
+		</button>
+		<ul class="dropdown-menu">
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='january') }}">January</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='february') }}">February</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='march') }}">March</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='april') }}">April</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='may') }}">May</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='june') }}">June</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='july') }}">July</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='august') }}">August</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='september') }}">September</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='october') }}">October</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='november') }}">November</a></li>
+			<li><a class="dropdown-item" href="{{ url_for('myExpenses', month='december') }}">December</a></li>
+		</ul>
+	</div>
+
+
 	<div class="expenseinfo">
 		<p class="titwelcome">
 			Hello, {{ current_user.first_name }}
@@ -83,4 +104,6 @@
 			</div>
 		</div>
 	</div>
+
+
 {% endblock content %}

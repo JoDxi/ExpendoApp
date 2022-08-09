@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField, BooleanField, IntegerField
 from wtforms.validators import DataRequired, Length, EqualTo, Email, ValidationError
 from expendoapp.models import User
-
+from datetime import datetime
 
 class RegistrationForm(FlaskForm):
 	first_name = StringField('First Name', validators=[DataRequired(), Length(min=2, max=20)])
@@ -12,7 +12,6 @@ class RegistrationForm(FlaskForm):
 	confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
 	submit = SubmitField('Sign Up')
 
-#function to check if user already registered to website using Email, if already registerd raise an error
 	def validate_email(self, email):
 		user = User.query.filter_by(email=email.data).first()
 		if user:
@@ -25,19 +24,6 @@ class LoginForm(FlaskForm):
 	remember = BooleanField('Remember Me')
 	submit = SubmitField('Login')
 
-
-#Update account form - possible continuation later
-# class UpdateAccountForm(FlaskForm):
-# 	first_name = StringField('First Name', validators=[DataRequired(), Length(min=2, max=20)])
-# 	last_name = StringField('Last Name ', validators=[DataRequired(), Length(min=2, max=20)])
-# 	email = StringField('Email', validators=[DataRequired(), Email()])
-# 	submit = SubmitField('Update')
-#
-# #function to check if user already registered to website using Email, if already registerd raise an error
-# 	def validate_email(self, email):
-# 		user = User.query.filter_by(email=email.data).first()
-# 		if user:
-# 			raise ValidationError('That Email is already registered!')
 
 class AddExpense(FlaskForm):
 	rent = IntegerField('Rent', default=0)

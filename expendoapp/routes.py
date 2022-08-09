@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 from flask import render_template, url_for, flash, redirect, request, abort
 from expendoapp import app, db, bcrypt
@@ -77,11 +77,40 @@ def account():
 	return render_template('account.html', title='Account')  #
 
 
-@app.route('/expenses')
+@app.route('/expenses/<month>', methods=['GET', 'POST'])
 @login_required
-def myExpenses():
-	expense = Expenses.query.filter_by(user_id=current_user.id).first()
+def myExpenses(month):
+	date = getExpenseMonth(month) + "-" + datetime.now().strftime("%y")
+	expense = Expenses.query.filter_by(user_id=current_user.id, date=date).first()
 	return render_template('my_expenses.html', expense=expense, title='My Expenses')
+
+
+def getExpenseMonth(month):
+	if month == "january":
+		return "01"
+	elif month == "february":
+		return "02"
+	elif month == "march":
+		return "03"
+	elif month == "april":
+		return "04"
+	elif month == "may":
+		return "05"
+	elif month == "june":
+		return "06"
+	elif month == "july":
+		return "07"
+	elif month == "august":
+		return "08"
+	elif month == "september":
+		return "09"
+	elif month == "october":
+		return "10"
+	elif month == "november":
+		return "11"
+	elif month == "december":
+		return "12"
+	return datetime.now().strftime("%m")
 
 
 @app.route('/expense/new', methods=['GET', 'POST'])
@@ -89,7 +118,8 @@ def myExpenses():
 def addExpense():
 	form = AddExpense()
 	if form.validate_on_submit():
-		expense = Expenses.query.filter_by(user_id=current_user.id, date=datetime.date.today().strftime("%m-%y")).first()
+		expense = Expenses.query.filter_by(user_id=current_user.id,
+										   date=datetime.now().strftime("%m-%y")).first()
 		if expense:
 			expense.rent += form.rent.data
 			expense.groceries += form.groceries.data
