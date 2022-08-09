@@ -1,5 +1,4 @@
 from expendoapp import db, login_manager
-from expendoapp import datetime
 from flask_login import UserMixin
 
 
@@ -20,8 +19,6 @@ class User(db.Model, UserMixin):
 		return f"User('{self.id}, {self.first_name}, {self.last_name}, {self.email}, {self.password}')"
 
 
-# NEED TO MAKE CONNECTING TABLE FOR DATABASE
-
 class Expenses(db.Model):
 	id = db.Column(db.Integer(), primary_key=True)
 	rent = db.Column(db.Integer())
@@ -33,7 +30,6 @@ class Expenses(db.Model):
 	miscellaneous = db.Column(db.Integer())
 	date = db.Column(db.String, nullable=False, )
 	user_id = db.Column(db.Integer(), db.ForeignKey('user.id'), nullable=False)
-
 
 
 	def __repr__(self):

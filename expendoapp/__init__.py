@@ -1,6 +1,5 @@
 from flask import Flask
 import flask_migrate
-from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
@@ -20,4 +19,3 @@ from expendoapp import routes
 
 
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:15957535@localhost/expendo"
